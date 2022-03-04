@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "outDir": "dist/",
+    "rootDir": "src/",
+    "strictNullChecks": true,
+    "noImplicitAny": true,
+    "target": "ES2018",
+    "types": ["@types/tampermonkey"]
+  },
+  "exclude": ["entry/**/*"]
+}

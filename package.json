@@ -1,0 +1,28 @@
+{
+  "name": "check_keywords",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "dev": "run-p dt ds",
+    "start": "run-p dt ds",
+    "build": "run-p bt bs",
+    "bs": "node style.js build",
+    "bt": "webpack --mode production",
+    "ds": "node style.js dev",
+    "dt": "webpack --watch --mode development",
+    "prettier": "prettier -c ./src/** --write"
+  },
+  "devDependencies": {
+    "@types/less": "*",
+    "@types/tampermonkey": "*",
+    "less": "*",
+    "npm-run-all": "*",
+    "prettier": "*",
+    "ts-loader": "*",
+    "typescript": "*",
+    "webpack": "*",
+    "webpack-cli": "*"
+  },
+  "dependencies": {}
+}
