@@ -1,12 +1,18 @@
 # CheckKeywords
 
-reddit 通过关键词显示或隐藏帖子
+## 功能
+
+1. reddit 通过关键词显示或隐藏帖子
+2. 仅针对 reddit Web 端 compact 模式做了适配
+3. 代码随便改, 和我无关
+4. 隐藏 POST list 中的广告
+5. 隐藏 POST Detail 中的广告
 
 ## 效果图示
 
-![](screenshoot/01.png)
-![](screenshoot/02.png)
-![](screenshoot/03.png)
+![](img/01.png)
+![](img/02.png)
+![](img/03.png)
 
 ## 使用 usage
 
