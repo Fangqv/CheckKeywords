@@ -126,7 +126,7 @@
     })()
     return option
   }
-  //  移除广告
+  //  添加标签
   function addFlagInPostList() {
     var _a, _b
     const list = document.querySelector(`.${PostListClassName}`)
@@ -142,9 +142,10 @@
             ? void 0
             : _b.classList
         if (classList) {
-          //  移除广告
+          //  根据 reddit 广告元素的特征, 添加广告标签
+          //  特征: class name 很长
           if (classList.toString().length > 1000) {
-            card.classList.add(FlagClassName)
+            card.classList.add(ADFlagClassName)
           }
           //  根据关键词为对应的 POST 添加 flag
           const titleH3 = card.querySelector(`.${PostClassName}`)
@@ -190,7 +191,7 @@
         })
           .then(el => {
             console.log('[fq_check_keywords] AD removed in post content')
-            el.classList.add(FlagClassName)
+            el.classList.add(ADFlagClassName)
           })
           .catch(info => {
             console.log(info)
