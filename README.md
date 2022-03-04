@@ -2,6 +2,12 @@
 
 reddit 通过关键词显示或隐藏帖子
 
+## 效果图示
+
+![](screenshoot/01.png)
+![](screenshoot/02.png)
+![](screenshoot/03.png)
+
 ## 使用 usage
 
 1. 安装 chrome 插件 tampermonkey
@@ -27,7 +33,7 @@ const BlockKeyWords = [
 const HideAD = true
 //  🚧🔧🔩🧱 是否隐藏标题中存在关键词的 POST
 const HideFlag = true
-//  🚧🔧🔩🧱 隐藏方式
+//  🚧🔧🔩🧱 隐藏方式, Dim = true 则使用 opacity:0.1 而非 display:none, 你可以使用这种方式检测那些帖子被屏蔽了
 const Dim = false
 ```
 

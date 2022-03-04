@@ -10,8 +10,25 @@
 // ==/UserScript==
 
 /******/ ;(() => {
+  //  🚧🔧🔩🧱 关键词
+  const BlockKeyWords = [
+    '俄',
+    '乌',
+    '哈尔科夫',
+    '格鲁吉亚',
+    '普京',
+    '泽连斯基',
+    '北约',
+  ]
+  //  🚧🔧🔩🧱 是否隐藏列表中的广告
+  const HideAD = true
+  //  🚧🔧🔩🧱 是否隐藏标题中存在关键词的 POST
+  const HideFlag = true
+  //  🚧🔧🔩🧱 隐藏方式, Dim = true 则使用 opacity:0.1 而非 display:none, 你可以使用这种方式检测那些帖子被屏蔽了
+  const Dim = false
+
   // webpackBootstrap
-  /******/ 'use strict'
+  /******/ ;('use strict')
   var __webpack_exports__ = {} // CONCATENATED MODULE: ./src/once.ts
 
   async function onceFind(options) {
@@ -48,22 +65,6 @@
     })
   } // CONCATENATED MODULE: ./src/main.ts
 
-  //  🚧🔧🔩🧱 关键词
-  const BlockKeyWords = [
-    '俄',
-    '乌',
-    '哈尔科夫',
-    '格鲁吉亚',
-    '普京',
-    '泽连斯基',
-    '北约',
-  ]
-  //  🚧🔧🔩🧱 是否隐藏列表中的广告
-  const HideAD = true
-  //  🚧🔧🔩🧱 是否隐藏标题中存在关键词的 POST
-  const HideFlag = true
-  //  🚧🔧🔩🧱 隐藏方式, Dim = true 则使用 opacity:0.1 而非 display:none
-  const Dim = false
   const FlagClassName = 'FQKill'
   const ADFlagClassName = 'FQADKill'
   const PostListClassName = 'rpBJOHq2PR60pnwJlUyP0'
@@ -92,7 +93,7 @@
       document.head.insertAdjacentHTML(
         'beforeend',
         `<style>.${FlagClassName}{${
-          Dim ? 'opacity:0.1' : 'display:none'
+          Dim ? 'opacity:0.4' : 'display:none'
         }}}</style>`,
       )
     }
@@ -100,7 +101,7 @@
       document.head.insertAdjacentHTML(
         'beforeend',
         `<style>.${ADFlagClassName}{${
-          Dim ? 'opacity:0.1}' : 'display:none'
+          Dim ? 'opacity:0.4}' : 'display:none'
         }}</style>`,
       )
     }
