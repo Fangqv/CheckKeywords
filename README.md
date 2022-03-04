@@ -4,7 +4,7 @@
 
 1. reddit 通过关键词显示或隐藏帖子
 2. 仅针对 reddit Web 端 compact 模式做了适配
-3. 代码随便改, 和我无关
+3. 代码随便改, [WTFPL](https://zh.wikipedia.org/zh-cn/WTFPL)
 4. 隐藏 POST list 中的广告
 5. 隐藏 POST Detail 中的广告
 
