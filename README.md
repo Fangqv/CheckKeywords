@@ -10,6 +10,16 @@
 
 ## 效果图示
 
+未使用脚本
+![](img/未使用脚本.png)
+
+脚本开启
+![](img/脚本开启.png)
+
+变暗(Dim = true)
+![](img/Dim.true.png)
+
+更多
 ![](img/01.png)
 ![](img/02.png)
 ![](img/03.png)

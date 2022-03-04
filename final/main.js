@@ -145,9 +145,9 @@
         if (classList) {
           //  根据 reddit 广告元素的特征, 添加广告标签
           //  特征: class name 很长
-          if (classList.toString().length > 1000) {
-            card.classList.add(ADFlagClassName)
-          }
+          // if (classList.toString().length > 1000) {
+          //   card.classList.add(ADFlagClassName)
+          // }
           //  根据关键词为对应的 POST 添加 flag
           const titleH3 = card.querySelector(`.${PostClassName}`)
           if (titleH3) {
