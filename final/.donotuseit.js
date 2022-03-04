@@ -30,48 +30,16 @@
 
   // webpackBootstrap
   /******/ ;('use strict')
-  var __webpack_exports__ = {} // CONCATENATED MODULE: ./src/once.ts
-
-  async function onceFind(options) {
-    let action
-    let ms = 10
-    let timeout = 5000
-    let id
-    if (typeof options === 'function') {
-      action = options
-    } else {
-      ms = options.ms || 10
-      timeout = options.timeout || 5000
-      action = options.action
-      id = options.id
-    }
-    return new Promise((resolve, reject) => {
-      if (typeof action !== 'function') {
-        const rejectInfo = 'action is not a function!' + (id ? `[${id}]` : '')
-        reject(rejectInfo)
-      } else {
-        const timer = setInterval(() => {
-          const element = action()
-          if (element) {
-            clearInterval(timer)
-            resolve(element)
-          }
-        }, ms)
-        setTimeout(() => {
-          clearInterval(timer)
-          const rejectInfo = `timeout: ${timeout}` + (id ? `[${id}]` : '')
-          reject(rejectInfo)
-        }, timeout)
-      }
-    })
-  } // CONCATENATED MODULE: ./src/main.ts
 
   const FlagClassName = 'FQKill'
   const ADFlagClassName = 'FQADKill'
   const PostListClassName = 'rpBJOHq2PR60pnwJlUyP0'
   const PostClassName = '_eYtD2XCVieq6emjKBH3m'
   const FlowedFlagClassName = 'FQFlowed'
+
   function Main() {
+    updateStyle()
+
     //  每次进行网络请求就遍历两次 Post List
     registerRequest().loadend(_ => {
       addFlagInPostList()
@@ -80,15 +48,13 @@
         addFlagInPostList()
       }, 300)
     })
-    if (window.location.href.includes('/comments/')) {
-      removeADInPostDetail()
-    } else {
+
+    if (!window.location.href.includes('/comments/')) {
       //  翻墙, 延迟太高
       setTimeout(() => {
         addFlagInPostList()
       }, 300)
     }
-    updateStyle()
   }
   function updateStyle() {
     if (HideFlag) {
@@ -164,44 +130,6 @@
       }
     }
   }
-  //  移除正文中的广告
-  function removeADInPostDetail() {
-    onceFind({
-      timeout: 10000,
-      ms: 100,
-      id: 'removeADInDetail.findContent',
-      action: () => document.querySelector('div.uI_hDmU5GSiudtABRz_37'),
-    })
-      .then(parent => {
-        onceFind({
-          timeout: 20000,
-          ms: 100,
-          id: 'removeADInDetail.removeAD',
-          action: () => {
-            for (const el of parent.children) {
-              if (
-                el.classList.length === 0 &&
-                el.attributes.length === 0 &&
-                el.tagName === 'DIV'
-              ) {
-                return el
-              }
-            }
-            return null
-          },
-        })
-          .then(el => {
-            console.log('[fq_check_keywords] AD removed in post content')
-            el.classList.add(ADFlagClassName)
-          })
-          .catch(info => {
-            console.log(info)
-          })
-      })
-      .catch(info => {
-        console.log(info)
-      })
-  } // CONCATENATED MODULE: ./src/site.ts
 
   ;(function () {
     'use strict'
