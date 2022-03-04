@@ -70,6 +70,7 @@
   const ADFlagClassName = 'FQADKill'
   const PostListClassName = 'rpBJOHq2PR60pnwJlUyP0'
   const PostClassName = '_eYtD2XCVieq6emjKBH3m'
+  const FlowedFlagClassName = 'FQFlowed'
   function Main() {
     //  每次进行网络请求就遍历两次 Post List
     registerRequest().loadend(_ => {
@@ -133,7 +134,7 @@
     if (!list) return
     for (const card of list.children) {
       if (card.classList) {
-        if (card.classList.contains('flowed')) continue
+        if (card.classList.contains(FlowedFlagClassName)) continue
         const classList =
           (_b =
             (_a = card.children[0]) === null || _a === void 0
@@ -156,7 +157,7 @@
               }
             }
           }
-          card.classList.add('flowed')
+          card.classList.add(FlowedFlagClassName)
         } else {
           // some holder exist
         }
