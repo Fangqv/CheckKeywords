@@ -1,6 +1,6 @@
 import { onceFind } from './once'
 
-//  🚧🔧🔩🧱 关键词
+//  🚧🔧🔩🧱 关键词, 如果 POST 的 title 匹配到了对应的 keyword, 就将 POST 隐藏或变半透明
 const BlockKeyWords = [
   '俄',
   '乌',
@@ -15,7 +15,7 @@ const BlockKeyWords = [
 const HideAD = true
 //  🚧🔧🔩🧱 是否隐藏标题中存在关键词的 POST
 const HideFlag = true
-//  🚧🔧🔩🧱 隐藏方式
+//  🚧🔧🔩🧱 隐藏方式, Dim = true 则使用 opacity:0.1 而非 display:none, 你可以使用这种方式检测那些帖子被屏蔽了
 const Dim = false
 
 const FlagClassName = 'FQKill'

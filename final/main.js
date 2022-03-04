@@ -10,7 +10,7 @@
 // ==/UserScript==
 
 /******/ ;(() => {
-  //  🚧🔧🔩🧱 关键词
+  //  🚧🔧🔩🧱 关键词, 如果 POST 的 title 匹配到了对应的 keyword, 就将 POST 隐藏或变半透明
   const BlockKeyWords = [
     '俄',
     '乌',
@@ -19,6 +19,7 @@
     '普京',
     '泽连斯基',
     '北约',
+    '卢卡申科',
   ]
   //  🚧🔧🔩🧱 是否隐藏列表中的广告
   const HideAD = true
